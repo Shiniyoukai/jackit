@@ -161,7 +161,25 @@ class DuckyParser(object):
                 entry['char'] = "\n"
                 entry['hid'], entry['mod'] = self.char_to_hid('ENTER')
                 entries.append(entry)
+                
+            elif line.startswith("TAB"):
+                entry = self.blank_entry.copy()
+                entry['char'] = "\n"
+                entry['hid'], entry['mod'] = self.char_to_hid('TAB')
+                entries.append(entry)
+                                
+            elif line.startswith("DELETE"):
+                entry = self.blank_entry.copy()
+                entry['char'] = "\n"
+                entry['hid'], entry['mod'] = self.char_to_hid('DELETE')
+                entries.append(entry)
 
+            elif line.startswith("SPACE"):
+                entry = self.blank_entry.copy()
+                entry['char'] = "\n"
+                entry['hid'], entry['mod'] = self.char_to_hid('SPACE')
+                entries.append(entry)
+                
             # arrow keys
             elif line.startswith("UP") or line.startswith("UPARROW"):
                 entry = self.blank_entry.copy()
